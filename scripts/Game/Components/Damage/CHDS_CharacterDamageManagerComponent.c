@@ -1,20 +1,19 @@
-modded class FDE : SCR_PoisonDamageEffect
-{
-	override EDamageType GetDefaultDamageType()
-	{
-		return FRZN_DMG;
-	}
-	
-}
-
 modded class SCR_CharacterControllerComponent
 {
-    protected FDE m_pFrozenEffectRef;
-
     // ------------------------------------------------------------------------
     override void OnLifeStateChanged(ECharacterLifeState previousLifeState, ECharacterLifeState newLifeState, bool isJIP)
     {
+		m_OnLifeStateChanged.Invoke(previousLifeState, newLifeState, isJIP);
+				
+		IEntity vehicle = CompartmentAccessComponent.GetVehicleIn(GetCharacter());
+		if (!vehicle)
+			return;
 		
+		SCR_VehicleFactionAffiliationComponent vehicleFactionAff = SCR_VehicleFactionAffiliationComponent.Cast(vehicle.FindComponent(SCR_VehicleFactionAffiliationComponent));
+		if (!vehicleFactionAff)
+			return;
+		
+		vehicleFactionAff.UpdateOccupantsCount();	
        /* if (isJIP)
             return;
 

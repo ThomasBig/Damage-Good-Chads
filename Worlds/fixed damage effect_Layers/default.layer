@@ -1,0 +1,26 @@
+GenericEntity : "{AE528A0B674FA712}Prefabs/Systems/DamageAreas/DamageArea_base.et" {
+ components {
+  SCR_DamageAreaComponent "{6646D2612811A3C6}" {
+   DamageAreas {
+    SCR_DotDamageArea "{69FAD6C664E14EDD}" {
+     "Area shape" DamageAreaShapeSphere "{69FAD6C187D6EFA6}" {
+     }
+     m_fDamageValue 0.5
+     m_DamageEffect FDE "{69FAD6C680527CA5}" {
+     }
+     m_bPenetrateWatertightCompartments 0
+     m_CustomHitZoneSelector SCR_CharacterHitZoneSelector "{69FC819458A23B29}" {
+     }
+     m_fDotDamage 0.5
+     m_fEffectDuration 1.2
+    }
+   }
+  }
+ }
+ coords 133.027 1 129.455
+ {
+  GenericEntity : "{6929659CE9375CAF}Prefabs/Props/Garbage/Tires/TireTractor_01_single.et" {
+   coords 0 -0.325 0
+  }
+ }
+}
