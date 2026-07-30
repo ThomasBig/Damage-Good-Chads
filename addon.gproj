@@ -1,0 +1,8 @@
+GameProject {
+ ID "DamageGoodChads"
+ GUID "69FC81935BACB075"
+ TITLE "DamageGoodChads"
+ Dependencies {
+  "58D0FB3206B6F859" "69EEBD1D0818BDCA"
+ }
+}
